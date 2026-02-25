@@ -25,45 +25,23 @@ A sophisticated portfolio risk analysis system powered by AI and LangGraph. This
 - Python 3.8+
 - OpenAI API key (for GPT-4 access)
 
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/AIRisk_Analyzer.git
-cd AIRisk_Analyzer/risk_analyzer
-```
-
-2. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Set up environment variables:
-```bash
-cp .env.example .env
-```
-
-5. Add your OpenAI API key to `.env`:
-```
-OPENAI_API_KEY=your_api_key_here
-```
-
 ### Usage
 
 Edit the portfolio in [main.py](main.py):
 
 ```python
 portfolio = {
-    "AAPL": 0.4,    # 40% Apple
-    "GOOGL": 0.3,   # 30% Google
-    "TSLA": 0.3     # 30% Tesla
-}
+        "JPM": 0.05,    # 5% JPMorgan Chase
+        "XOM": 0.05,   # 5% ExxonMobil
+        "JNJ": 0.1,     # 10% Johnson & Johnson
+        "BRK-B": 0.1,     # 10% Gerdau
+        "GS": 0.1,     # 10% Goldman Sachs
+        "TSLA": 0.1,     # 10% Tesla
+        "AMZN": 0.1,     # 10% Amazon
+        "MSFT": 0.1,    # 10% Microsoft
+        "AAPL": 0.1,    # 10% Apple
+        "GOOGL": 0.1    # 10% Alphabet
+    }
 time_horizon = 90   # 3 months of historical data
 ```
 
@@ -115,22 +93,6 @@ START
 - **Never commit `.env` file**: The project includes `.env` in `.gitignore`
 - **Use `.env.example`**: Copy this template and fill in your own secrets
 - **Environment variables**: All sensitive data is loaded via `python-dotenv`
-
-### Best Practices
-
-```bash
-# ✅ DO: Set API key via environment variable
-export OPENAI_API_KEY="sk-..."
-
-# ❌ DON'T: Hardcode API keys in source code
-# OPENAI_API_KEY = "sk-..."
-```
-
-### For GitHub Private Repository
-
-1. Add secrets in GitHub settings (Settings → Secrets and variables → Actions)
-2. Never share `.env` file outside secure channels
-3. Rotate API keys periodically
 
 ## 📦 Dependencies
 
